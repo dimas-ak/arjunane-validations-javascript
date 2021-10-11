@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjunane Validations</title>
+</head>
+<body>
+    <form id="form" action="mencoba">
+        <div class="error_mencoba"></div>
+        <input type="text" class="mencoba">
+        <div class="error_sel"></div>
+        <select name="sel" id="sel">
+            <option value=""></option>
+            <option value="asiyap">asiyap</option>
+        </select>
+        <div>
+            <div class="error_sekolah"></div>
+            <input type="checkbox" name="sekolah"> <label for="sekolah">Sekolah A</label>
+            <input type="checkbox" name="sekolah"> <label for="sekolah">Sekolah B</label>
+            <input type="checkbox" name="sekolah"> <label for="sekolah">Sekolah C</label>
+        </div>
+        <div class="error_input_file"></div>
+        <input type="file" id="input_file" name="input_file[]" multiple>
+        <button>SUBMIT</button>
+    </form>
+    <script src="arjunane_validations.js"></script>
+    <script>
+        var valid = arValidations.init("#form");
+        valid.setConfig(function (config) {
+            config.errorPrefix = "<strong>";
+            config.errorSuffix = "</strong>";
+            return config;
+        });
+        valid.setRules(".mencoba", "Mencoba", "required|email");
+        valid.setRules("sel", "Select Option", "required");
+        valid.setRules("sekolah", "Pilih sekolah", "required|max:1");
+        valid.setRules("#input_file", "Photo", "required|max:10000|mimetypes:image/png,image/jpg");
+
+        valid.onError("sekolah",function (error) {
+            console.log(error)
+        });
+        valid.onError("mencoba",function (error) {
+            console.log(error)
+        });
+
+        valid.onErrors(function (errors) {
+            console.log(errors)
+        });
+
+        valid.onSubmit( function (evt) {
+            evt.preventDefault();
+        });
+    </script>
+</body>
+</html>
