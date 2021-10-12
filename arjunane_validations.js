@@ -185,7 +185,7 @@
 
     arjunane_validations.prototype.__setErrorHTML = function (errorText)
     {
-        return this.errorPrefix + (typeof errorText !== 'undefined' ? errorText : "") + this.errorSuffix;
+        return this.errorPrefix + (typeof errorText !== 'undefined' && errorText !== null ? errorText : "") + this.errorSuffix;
     }
 
     arjunane_validations.prototype.__setOnChange = function (rule) 
