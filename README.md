@@ -1,15 +1,15 @@
-# arjunane-validation
+# arjunane-validations
 Simple Library for table
 
 ## Installation
 
 ```bash
-$ git clone https://github.com/dimas-ak/arjunane-validation-javascript.git
+$ git clone https://github.com/dimas-ak/arjunane-validations-javascript.git
 ```
 
 ## Required
 ```bash
-arjunane_validation.js OR arjunane_validation.min.js
+arjunane_validations.js OR arjunane_validations.min.js
 ```
 
 Documentation : [Click Here](https://dimas-ak.github.io/#/documentation/arjunane-validation-javascript)
